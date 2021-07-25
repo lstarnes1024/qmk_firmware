@@ -144,6 +144,7 @@ You have the option to implement you own debouncing algorithm. To do this:
 ### Old names
 The following old names for existing algorithms will continue to be supported, however it is recommended to use the new names instead.
 
+
 * sym_g - old name for sym_defer_g
 * eager_pk - old name for sym_eager_pk
 * sym_pk - old name for sym_defer_pk

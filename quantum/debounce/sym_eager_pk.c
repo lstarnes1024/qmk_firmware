@@ -35,6 +35,7 @@ No further inputs are accepted until DEBOUNCE milliseconds have occurred.
 
 #define ROW_SHIFTER ((matrix_row_t)1)
 
+
 #define debounce_counter_t uint8_t
 
 static debounce_counter_t *debounce_counters;
@@ -45,12 +46,12 @@ static bool                matrix_need_update;
 #define MAX_DEBOUNCE (DEBOUNCE_ELAPSED - 1)
 
 static uint8_t wrapping_timer_read(void) {
-    static uint16_t time        = 0;
+    static uint16_t time = 0;
     static uint8_t  last_result = 0;
-    uint16_t        new_time    = timer_read();
-    uint16_t        diff        = new_time - time;
-    time                        = new_time;
-    last_result                 = (last_result + diff) % (MAX_DEBOUNCE + 1);
+    uint16_t new_time = timer_read();
+    uint16_t diff = new_time - time;
+    time = new_time;
+    last_result = (last_result + diff) % (MAX_DEBOUNCE + 1);
     return last_result;
 }
 
