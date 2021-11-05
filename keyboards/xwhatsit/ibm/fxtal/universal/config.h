@@ -1,5 +1,5 @@
 /*
-Copyright 2020 Purdea Andrei
+Copyright 2020-2021 Purdea Andrei
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -23,9 +23,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VENDOR_ID 0x0481
 #define PRODUCT_ID 0x0002
 #define DEVICE_VER 0x0001
-#define MANUFACTURER wcass/Tom Wong-Cornall/Purdea Andrei/kmnov2017/listofoptions
-#define PRODUCT IBM Model F XT/Bigfoot Xtant
-#define DESCRIPTION QMK firmware for the IBM Xtant keyboard using a 'universal' xwhatsit controller PCB
+#define MANUFACTURER Tom Wong-Cornall/Alectardy98/Purdea Andrei/kmnov2017/listofoptions
+#define PRODUCT IBM Model F XT/Bigfoot FXTal
+#define DESCRIPTION QMK firmware for the IBM Model F XT/Bigfoot FXTal keyboard using a 'universal' xwhatsit controller PCB
 
 /* key matrix size */
 #define MATRIX_ROWS 8
@@ -273,7 +273,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define CAPSENSE_HARDCODED_THRESHOLD 142
 #endif
 
-#define CAPSENSE_KEYMAP_COL_TO_PHYSICAL_COL(col) (4+(col))
+#define CAPSENSE_KEYMAP_COL_TO_PHYSICAL_COL(col) (15-(col))
 
 // By default we set up for support of xwhatsit's solenoid driver board.
 // Comment out HAPTIC_ENABLE_PIN if you don't have an enable pin:
