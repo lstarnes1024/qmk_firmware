@@ -20,6 +20,7 @@
 #include "haptic.h"
 #include "power.h"
 #include "gpio.h"
+#include "usb_device_state.h"
 
 bool     solenoid_on      = false;
 bool     solenoid_buzzing = false;
