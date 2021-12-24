@@ -445,8 +445,6 @@ void EVENT_USB_Device_WakeUp() {
 
     usb_device_state_set_resume(USB_DeviceState == DEVICE_STATE_Configured, USB_Device_ConfigurationNumber);
 
-    power_set_resume(USB_DeviceState == DEVICE_STATE_Configured, USB_Device_ConfigurationNumber);
-
 #ifdef SLEEP_LED_ENABLE
     sleep_led_disable();
     // NOTE: converters may not accept this
