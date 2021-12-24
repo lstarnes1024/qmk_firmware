@@ -15,10 +15,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <timer.h>
+#include "timer.h"
 #include "solenoid.h"
 #include "haptic.h"
 #include "power.h"
+#include "gpio.h"
+#include "usb_device_state.h"
 
 bool     solenoid_on      = false;
 bool     solenoid_buzzing = false;
@@ -83,7 +85,7 @@ void solenoid_check(void) {
 void solenoid_setup(void) {
     SOLENOID_PIN_WRITE_INACTIVE();
     setPinOutput(SOLENOID_PIN);
-    if ((!HAPTIC_OFF_IN_LOW_POWER) || (power_state == POWER_STATE_CONFIGURED)) {
+    if ((!HAPTIC_OFF_IN_LOW_POWER) || (usb_device_state == USB_DEVICE_STATE_CONFIGURED) || (power_state == POWER_STATE_CONFIGURED)) {
         solenoid_fire();
     }
 }
